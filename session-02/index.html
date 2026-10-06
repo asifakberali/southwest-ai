@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt Cheat Sheet · Writing with AI</title>
+<meta name="description" content="Southwest AI Session 2: the four ingredients of a good writing prompt, a copy-paste template, and examples.">
+<style>
+:root{--ink:#16324A;--amber:#E8A33D;--terra:#C8553D;--sand:#F3E9DC;--slate:#4A5A68;--teal:#2A7F7A;--brick:#A63D2F;--bg:#fff;--fg:#16324A;--muted:#4A5A68;--card:#F3E9DC;--code:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0f2133;--fg:#F3E9DC;--muted:#b8c4cf;--card:#1b3a55;--code:#16324A;--terra:#F08A6F;--teal:#5CC2BB;--brick:#F28B7C}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 Calibri,"Segoe UI",system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header{background:#16324A;color:#fff;padding:48px 0 40px}
+.kicker{color:var(--amber);font-weight:700;letter-spacing:.15em;font-size:.8rem;text-transform:uppercase}
+h1,h2{font-family:Cambria,Georgia,serif;line-height:1.2}
+h1{font-size:2.3rem;margin:.4em 0 .3em}
+header p{color:#F3E9DC;margin:0;font-size:1.1rem}
+h2{font-size:1.6rem;margin:2.2em 0 .4em}
+.sub{color:var(--muted);margin-top:0}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.card{background:var(--card);border-radius:12px;padding:16px 18px}
+.card h3{margin:0 0 4px;font-family:Cambria,Georgia,serif;font-size:1.3rem;color:var(--terra)}
+.card .q{font-weight:700;margin:0 0 8px}
+.card .ex{font-size:.92rem;color:var(--muted);margin:0;font-style:italic}
+.prompt{position:relative;background:var(--code);border:1.5px solid var(--fg);border-radius:10px;padding:16px 64px 16px 18px;margin:12px 0;white-space:pre-wrap}
+.prompt .ph{color:var(--terra);font-weight:700}
+.copy{position:absolute;top:10px;right:10px;display:flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:var(--fg);color:var(--bg);width:32px;height:32px;padding:0;cursor:pointer}
+.copy:focus-visible{outline:3px solid var(--amber)}
+.copy svg{width:16px;height:16px;display:block}
+.label{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 0}
+.ba{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.ba .bad .label{color:var(--brick)} .ba .good .label{color:var(--teal)}
+.ex-card{background:var(--card);border-radius:12px;padding:6px 18px 12px;margin:16px 0}
+.ex-card h3{font-family:Cambria,Georgia,serif;margin:.8em 0 0;font-size:1.2rem}
+h3.group{font-family:Cambria,Georgia,serif;font-size:1.25rem;color:var(--terra);margin:1.8em 0 0}
+.ex-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin:.4em 0 0}
+.tag{font-size:.75rem;font-weight:700;border-radius:99px;padding:2px 10px;background:var(--fg);color:var(--bg)}
+table{border-collapse:collapse;width:100%;font-size:.98rem}
+td,th{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(128,128,128,.3);vertical-align:top}
+th{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.warn{border-left:0;background:var(--card);border-radius:12px;padding:6px 20px 14px}
+.warn h2{margin-top:.8em;color:var(--brick)}
+ul.check{list-style:none;padding:0}
+ul.check li{padding:6px 0 6px 34px;position:relative}
+ul.check li::before{content:"";position:absolute;left:4px;top:10px;width:18px;height:18px;border:2px solid var(--teal);border-radius:4px}
+footer{margin:56px 0 40px;color:var(--muted);font-size:.9rem}
+@media print{header{background:none;color:#000;padding:10px 0}.copy{display:none}.kicker,header p{color:#000}}
+nav.tabs{display:flex;gap:8px;margin:22px 0 0;flex-wrap:wrap}nav.tabs a{color:#F3E9DC;text-decoration:none;font-weight:700;font-size:.95rem;padding:6px 14px;border-radius:99px;border:1.5px solid rgba(243,233,220,.5)}nav.tabs a[aria-current=page]{background:#E8A33D;color:#16324A;border-color:#E8A33D}nav.tabs a:focus-visible{outline:3px solid #E8A33D}.step{font-family:Cambria,Georgia,serif;color:var(--terra)}
+@media print{nav.tabs{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="kicker">Southwest AI · Session 2 · Foundations</div>
+<h1>Prompt Cheat Sheet: Writing with AI</h1>
+<p>AI can draft the message. You still decide what to send.</p>
+<nav class="tabs" aria-label="Pages"><a href="index.html" aria-current="page">1 · Prompt cheat sheet</a><a href="voice.html">2 · Sound like you</a></nav>
+</div></header>
+<main class="wrap">
+
+<h2>The four ingredients</h2>
+<p class="sub">A prompt is just an instruction. The more context you give, the better the writing.</p>
+<div class="grid">
+<div class="card"><h3>1 · Role</h3><p class="q">Who is writing?</p><p class="ex">“You are a friendly office manager…”</p></div>
+<div class="card"><h3>2 · Task</h3><p class="q">What do you need?</p><p class="ex">“Write a follow-up email to a client…”</p></div>
+<div class="card"><h3>3 · Tone</h3><p class="q">How should it sound?</p><p class="ex">“Warm and professional, not salesy.”</p></div>
+<div class="card"><h3>4 · Constraints</h3><p class="q">Length, format, include/avoid</p><p class="ex">“Under 80 words. Suggest a call. No pricing.”</p></div>
+</div>
+
+<h2>Copy-paste template</h2>
+<p class="sub">Fill in the orange brackets, then paste into your AI tool.</p>
+<div class="prompt" data-copy>You are <span class="ph">[ROLE]</span>.
+Write <span class="ph">[TASK: type of message, to whom, about what]</span>.
+Tone: <span class="ph">[TONE]</span>.
+Constraints: <span class="ph">[LENGTH, FORMAT, what to include, what to avoid]</span>.
+If I haven't given you a fact, use a [placeholder] instead of making something up.</div>
+
+<h2>Vague vs. specific</h2>
+<div class="ba">
+<div class="bad"><p class="label">Vague</p><div class="prompt" data-copy>Write a follow-up email.</div><p class="sub">Result: generic, could be from anyone, may invent details.</p></div>
+<div class="good"><p class="label">Specific</p><div class="prompt" data-copy>Write a warm, brief follow-up to a small business client named Jordan who I met at a networking event last week. We discussed possibly working together on a website project.</div><p class="sub">Result: right tone, right length, grounded in your context.</p></div>
+</div>
+
+<h2>Worked examples</h2>
+
+<div class="ex-card">
+<h3>Follow up with a new contact</h3>
+<div class="tags"><span class="tag">Role</span><span class="tag">Task</span><span class="tag">Tone</span><span class="tag">Constraints</span></div>
+<div class="prompt" data-copy>You are a freelance web designer writing to a potential client. Write a follow-up email to Jordan, who owns a small bakery and whom I met at a networking event last week. Tone: warm and professional, not salesy. Constraints: under 80 words, suggest a 15-minute call, don't mention pricing.</div>
+</div>
+
+<div class="ex-card">
+<h3>Chase a late delivery</h3>
+<div class="prompt" data-copy>You are a project coordinator. Write a polite but firm email to a vendor whose delivery is two weeks late. Tone: professional, calm, direct. Constraints: under 100 words, ask for a confirmed new delivery date, don't threaten to cancel.</div>
+</div>
+
+<div class="ex-card">
+<h3>Decline a meeting</h3>
+<div class="prompt" data-copy>Write a friendly message declining a meeting invitation because my calendar is full this week. Offer next week instead. Tone: warm and brief. Constraints: 3 sentences maximum.</div>
+</div>
+
+<div class="ex-card">
+<h3>Say thank you (with placeholders)</h3>
+<div class="prompt" data-copy>Write a thank-you note to [client name] after our meeting about [project]. Tone: warm and sincere. Constraints: 3 sentences, mention one specific thing from the meeting as [detail].</div>
+</div>
+
+<h2>More everyday examples</h2>
+<p class="sub">Tap Copy, swap the [brackets] for your own details, and paste.</p>
+
+<h3 class="group">At work</h3>
+<div class="ex-card">
+<h3>Ask your boss for time off</h3>
+<div class="prompt" data-copy>Write a short, respectful message to my manager asking for [dates] off. Tone: professional and positive. Constraints: 4 sentences, mention I'll finish [project] before I go, offer to arrange coverage.</div>
+</div>
+<div class="ex-card">
+<h3>Remind someone about a deadline</h3>
+<div class="prompt" data-copy>Write a friendly reminder to a coworker that [task] is due on [date]. Tone: polite, not pushy. Constraints: 2 to 3 sentences, offer to help if they're stuck.</div>
+</div>
+<div class="ex-card">
+<h3>Summarize a meeting for the team</h3>
+<div class="prompt" data-copy>You are a team assistant. Turn these notes into a short follow-up email with three sections: Decisions, Action items (with owner and due date), and Open questions. Constraints: under 150 words, bullet points. If a detail is missing, use [placeholder]. Notes: [paste notes, with names removed]</div>
+</div>
+<div class="ex-card">
+<h3>Ask for a raise or review</h3>
+<div class="prompt" data-copy>Help me write a message to my manager requesting a meeting to discuss my compensation. Tone: confident and professional, not demanding. Constraints: under 100 words, don't state a number yet.</div>
+</div>
+<div class="ex-card">
+<h3>Politely say no to extra work</h3>
+<div class="prompt" data-copy>Write a message declining a new request because I'm already working on [priority task]. Tone: helpful and honest. Constraints: 3 sentences, offer one alternative, such as a later date or another person who could help.</div>
+</div>
+
+<h3 class="group">With customers and clients</h3>
+<div class="ex-card">
+<h3>Reply to an unhappy customer</h3>
+<div class="prompt" data-copy>You are a customer service representative for a small business. Write a reply to a customer who received [problem]. Tone: sincere, calm, solution-focused. Constraints: under 120 words, apologize once, offer [fix], don't blame anyone and don't promise anything I haven't confirmed.</div>
+</div>
+<div class="ex-card">
+<h3>Send a gentle payment reminder</h3>
+<div class="prompt" data-copy>Write a friendly but clear reminder to [client name] that invoice [number] is [X] days overdue. Tone: polite and professional. Constraints: under 80 words, include the due date as [date], offer to answer questions.</div>
+</div>
+<div class="ex-card">
+<h3>Announce a change</h3>
+<div class="prompt" data-copy>Write a short customer announcement that [change, such as new hours or a price update] starts on [date]. Tone: warm and transparent. Constraints: under 100 words, explain why in one sentence, give a contact for questions.</div>
+</div>
+<div class="ex-card">
+<h3>Ask for a review or testimonial</h3>
+<div class="prompt" data-copy>Write a short, friendly message asking a happy client to leave a review of our work. Tone: grateful, low pressure. Constraints: 3 sentences, make it easy by including [link].</div>
+</div>
+
+<h3 class="group">Job search and school</h3>
+<div class="ex-card">
+<h3>Thank an interviewer</h3>
+<div class="prompt" data-copy>Write a thank-you email to an interviewer for the [job title] role. Tone: enthusiastic and professional. Constraints: under 100 words, mention one specific topic we discussed: [topic], and restate my interest.</div>
+</div>
+<div class="ex-card">
+<h3>Ask a teacher or professor for help</h3>
+<div class="prompt" data-copy>Write a respectful email to my instructor asking for an extension on [assignment] because [short reason]. Tone: polite and responsible. Constraints: 4 sentences, propose a new date of [date], thank them for their time.</div>
+</div>
+<div class="ex-card">
+<h3>Request a reference</h3>
+<div class="prompt" data-copy>Write an email asking [name], my former [manager or teacher], to be a reference for [opportunity]. Tone: appreciative and respectful. Constraints: under 120 words, remind them how we worked together on [project], and make it easy to say no.</div>
+</div>
+
+<h3 class="group">Everyday life</h3>
+<div class="ex-card">
+<h3>Complain to a landlord or company</h3>
+<div class="prompt" data-copy>Write a clear, polite complaint about [issue] that started on [date]. Tone: firm but respectful. Constraints: under 150 words, list what happened in order, say what resolution I want, and set a reply-by date of [date].</div>
+</div>
+<div class="ex-card">
+<h3>Text a neighbor or group chat</h3>
+<div class="prompt" data-copy>Write a friendly text to my neighbors about [event or issue, such as a noisy renovation or a block party]. Tone: casual and considerate. Constraints: 3 sentences maximum, no exclamation marks.</div>
+</div>
+<div class="ex-card">
+<h3>Write a condolence or get-well note</h3>
+<div class="prompt" data-copy>Help me write a short, heartfelt note to [name], whose [situation]. Tone: warm and sincere, not over the top. Constraints: 3 sentences, no clichés, offer [specific help]. I'll add a personal memory myself.</div>
+</div>
+<div class="ex-card">
+<h3>Plan and invite</h3>
+<div class="prompt" data-copy>Write a short invitation to [event] on [date] at [place]. Tone: warm and casual. Constraints: under 60 words, include RSVP by [date].</div>
+</div>
+
+<h2>Change the tone</h2>
+<p class="sub">Same situation (a follow-up with no reply), three different tones.</p>
+<table>
+<tr><th>Tone</th><th>Prompt</th><th>Sounds like</th></tr>
+<tr><td><b>Formal</b></td><td>“Write a formal follow-up…”</td><td><i>“Dear Ms. Johnson, I am writing to follow up…”</i></td></tr>
+<tr><td><b>Friendly</b></td><td>“Write a friendly follow-up…”</td><td><i>“Hey Sarah! Just wanted to circle back…”</i></td></tr>
+<tr><td><b>Brief</b></td><td>“Write a very short, neutral follow-up…”</td><td><i>“Just checking in on my previous message…”</i></td></tr>
+</table>
+
+<h2>Don't restart. Iterate.</h2>
+<p class="sub">Keep the same chat and give one instruction at a time.</p>
+<div class="grid">
+<div class="prompt" data-copy>Make it shorter.</div>
+<div class="prompt" data-copy>Make it more formal.</div>
+<div class="prompt" data-copy>Make it sound more casual.</div>
+<div class="prompt" data-copy>Give me three subject line options.</div>
+<div class="prompt" data-copy>Give me three different versions.</div>
+<div class="prompt" data-copy>Remove anything that sounds salesy.</div>
+</div>
+
+<h2>Make it sound like you</h2>
+<div class="prompt" data-copy>Here's a sample of how I normally write: "[paste 2–3 of your own sentences]". Rewrite your last draft to match this voice.</div>
+
+<div class="warn">
+<h2>What not to share</h2>
+<p>When in doubt, use a placeholder like <b>[client name]</b>, not the real name. Give AI the situation, not the details.</p>
+<p><b>Never paste:</b> client personal data, confidential contracts, private medical or legal details, unreleased financials.</p>
+</div>
+
+<h2>Writing check: before you send</h2>
+<ul class="check">
+<li>Read it out loud. Circle anything that doesn't sound like you.</li>
+<li>Check every name, date, number, and claim.</li>
+<li>Does the tone fit my relationship with this person?</li>
+<li>Did I leave out private or confidential details?</li>
+<li>Would the reader recognize my voice?</li>
+</ul>
+
+<footer>Next: <a href="voice.html">Make AI sound like you →</a><br>Southwest AI · AI Made Practical | Session 2. Next week: Research and Summarization.</footer>
+</main>
+<script>
+var ICON_COPY='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+var ICON_CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+document.querySelectorAll('[data-copy]').forEach(function(el){
+  var b=document.createElement('button');b.className='copy';b.type='button';b.innerHTML=ICON_COPY;
+  b.setAttribute('aria-label','Copy prompt to clipboard');
+  b.onclick=function(){
+    var txt=el.innerText;
+    var done=function(){
+      b.innerHTML=ICON_CHECK;b.setAttribute('aria-label','Copied!');
+      setTimeout(function(){b.innerHTML=ICON_COPY;b.setAttribute('aria-label','Copy prompt to clipboard')},1500);
+    };
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){})}
+  };
+  el.appendChild(b);
+});
+</script>
+</body>
+</html>
